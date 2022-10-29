@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  proxy:
+    image: nginx:1.23.1
+    volumes:
+      - ./nginx:/etc/nginx:rw
+    ports:
+      - "443:443"
+    networks:
+      - my-default
+networks:
+  my-default:
+    external: true
